@@ -46,7 +46,7 @@ def get_incident(incident_id):
 
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['PUT'])
 def edit_record(incident_id):
-    # function for editing a record
+    # function for editing an incident
     if incident_id == 0 or incident_id > len(incidents_list):
         return jsonify({"message": "Index is out of range"}), 400
     data = request.get_json()
