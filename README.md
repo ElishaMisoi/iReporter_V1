@@ -14,5 +14,5 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 ### Running Tests
 - Install nosetests
 - Navigate to project root
-- Use `nosetests tests/` to run the tests
+- Use `nosetests app/tests/` to run the tests
 - To run the tests with coverage, use `nosetests --with-coverage --cover-package=api && coverage report`
