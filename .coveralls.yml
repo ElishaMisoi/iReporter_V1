@@ -1,0 +1,3 @@
+[run]
+include=app/api/v1/views.py, app/api/v1/models.py
+omit= venv\*, api/__init__.py
