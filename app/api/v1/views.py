@@ -46,13 +46,13 @@ def get_incident(incident_id):
 
 
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['PUT'])
-def edit_record(incident_id):
+def edit_incident(incident_id):
     # function for editing an incident
     if incident_id == 0 or incident_id > len(incidents_list):
         return jsonify({"message": "Index is out of range"}), 400
     data = request.get_json()
     for incident in incidents_list:
-        if int(incident.record_id) == int(incident_id):
+        if int(incident.id) == int(incident_id):
             incident.type = data['type']
             incident.id = data['id']
             incident.comment = data['comment']
@@ -69,7 +69,7 @@ def edit_record(incident_id):
 
 
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['DELETE'])
-def delete_record(incident_id):
+def delete_incident(incident_id):
     # deleting an incident
     if incident_id == 0 or incident_id > len(incidents_list):
         return jsonify({"message": "Index out of range"}), 400
@@ -89,7 +89,6 @@ def create_user():
     registered = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     isAdmin = False
 
-
     user = User(id, data['firstname'], data['lastname'],
                 data['othernames'], data['email'], data['phoneNumber'],
                 data['username'], registered, isAdmin)
@@ -98,8 +97,7 @@ def create_user():
 
     return jsonify({
         "message": "User created",
-        "status": 201,
-        "data": user
+        "status": 201
         }), 201
 
 
