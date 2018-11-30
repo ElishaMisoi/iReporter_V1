@@ -44,6 +44,7 @@ def get_incident(incident_id):
         }), 200
 
 
+
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['PUT'])
 def edit_record(incident_id):
     # function for editing an incident
