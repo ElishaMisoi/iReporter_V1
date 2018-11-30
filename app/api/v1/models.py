@@ -40,6 +40,7 @@ class User:
         self. registered = registered
         self.isAdmin = isAdmin
 
+
     def get_user_details(self):
         # getting one user
         return {
