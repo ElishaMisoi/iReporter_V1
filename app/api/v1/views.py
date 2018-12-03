@@ -1,12 +1,12 @@
 from flask import Flask, jsonify, request
 from app.api.v1.models import Incident, User
 from datetime import datetime
+
 app = Flask(__name__)
 
 incidents_list = []
 
 users = []
-
 
 @app.route('/api/v1/incident', methods=['POST'])
 def create_incident():
@@ -42,7 +42,6 @@ def get_incident(incident_id):
     return jsonify({
         "data": my_incident
         }), 200
-
 
 
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['PUT'])
