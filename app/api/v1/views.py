@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from app.api.v1.models import Incident, User
 from datetime import datetime
+
 app = Flask(__name__)
 
 incidents_list = []
