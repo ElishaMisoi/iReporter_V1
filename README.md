@@ -1,4 +1,4 @@
-## iReporter Application
+## iReporter API V1
 
 [![Build Status](https://travis-ci.org/Elisha-Misoi/iReporter_V1.svg?branch=develop)](https://travis-ci.org/Elisha-Misoi/iReporter_V1) [![Coverage Status](https://coveralls.io/repos/github/Phionanamugga/iReporter-API/badge.svg?branch=develop)](https://coveralls.io/github/Phionanamugga/iReporter-API?branch=develop)
 
