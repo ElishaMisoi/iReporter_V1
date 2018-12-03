@@ -8,7 +8,6 @@ incidents_list = []
 
 users = []
 
-
 @app.route('/api/v1/incident', methods=['POST'])
 def create_incident():
     # posting an incident
@@ -43,7 +42,6 @@ def get_incident(incident_id):
     return jsonify({
         "data": my_incident
         }), 200
-
 
 
 @app.route('/api/v1/incidents/<int:incident_id>', methods=['PUT'])
