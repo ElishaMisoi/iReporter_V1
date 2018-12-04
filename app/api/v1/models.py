@@ -25,11 +25,10 @@ class Incident:
             "comment": self.comment
         }
 
-
 class User:
     # user class
     def __init__(self, id, firstname, lastname, othernames, email,
-                 phoneNumber, username, registered, isAdmin):
+                 phoneNumber, username, registered, isAdmin, password, password_confirm):
         self.id = id
         self.firstname = firstname
         self.lastname = lastname
@@ -39,7 +38,8 @@ class User:
         self.username = username
         self. registered = registered
         self.isAdmin = isAdmin
-
+        self.password = password
+        self.password_confirm = password_confirm
 
     def get_user_details(self):
         # getting one user
