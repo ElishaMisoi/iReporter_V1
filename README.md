@@ -30,7 +30,7 @@ Prefix `api/v1/` to all api endpoints below
 | **DELETE, GET, PUT**  |  `/api/v1/incidents/<int:incident_id>` | get, delete and update incident records with given `incident_id` |
 |  **POST** |  `/api/v1/users` | create a new user |
 |  **DELETE, GET, PUT** |  `/api/v1/users/<int:user_id>'  | get, delete and update user with given `user_id`|
-|  **GET** |  `/api/v1/users` | fetch all users |
+|  **GET** |  `/api/v1/users' | fetch all users |
 
 ### Running Tests
 - Install nosetests
