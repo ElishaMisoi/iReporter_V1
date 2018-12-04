@@ -14,6 +14,24 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 7. Users can change the geolocation (Lat Long Coordinates) attached to their ​ red-flag ​ or intervention ​ records​ .
 8. Admin can change the ​ status​​ of a record to either ​ under investigation, rejected ​ (in the event of a false claim)​ ​ or​ resolved ( ​ in the event that the claim has been investigated and resolved)​
 
+## Demo
+
+Project API demo is hosted at [Heroku](https://ireporter-api-v1.herokuapp.com)
+
+### API endpoints
+
+Prefix `api/v1/` to all api endpoints below
+
+| **HTTP METHOD**   | **URI**  | **ACTION** |
+|---|---|---|
+|  **POST** |  `/api/v1/incident` | post an incident |
+|  **GET** |  `/api/v1/incidents` | get list of all incidents |
+|  **GET** |  `/api/v1/incidents/<int:incident_id>` | fetch incident records by `incident_id` field |
+| **DELETE, GET, PUT**  |  `/api/v1/incidents/<int:incident_id>` | get, delete and update incident records with given `incident_id` |
+|  **POST** |  `/api/v1/users` | create a new user |
+|  **DELETE, GET, PUT** |  `/api/v1/users/<int:user_id>'  | get, delete and update user with given `user_id`|
+|  **GET** |  `/api/v1/users` | fetch all users |
+
 ### Running Tests
 - Install nosetests
 - Navigate to project root
