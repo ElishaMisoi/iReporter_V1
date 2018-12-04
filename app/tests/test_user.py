@@ -10,12 +10,15 @@ class Test_record_views(unittest.TestCase):
     def test_register_user(self):
         # Tests that the end point enables a new user create an account
         user_details = {
-                        "firstname": "test",
-                        "lastname": "user",
-                        "othernames": "test_user",
-                        "email": "test@test.com",
-                        "phoneNumber": "testNumber",
-                        "username": "test_username"
+                        "firstname": "test_firstname",
+                        "lastname": "test_lastname",
+                        "othernames": "test_othernames",
+                        "email": "test_email@email.com",
+                        "phoneNumber": "test_phonNumber",
+                        "username": "test_username",
+                        "registered": "registered",
+                        "password": "1234",
+                        "password_confirm": "1234"
                         }
         response = self.client.post('api/v1/users',
                                     json=user_details)
@@ -31,12 +34,15 @@ class Test_record_views(unittest.TestCase):
     def test_fetch_single_user_details(self):
         # Tests that the end point returns a single user's details
         user_details = {
-                            "firstname": "test",
-                            "lastname": "user",
-                            "othernames": "test_user",
-                            "email": "test@test.com",
-                            "phoneNumber": "testNumber",
-                            "username": "test_username"
+                        "firstname": "test_firstname",
+                        "lastname": "test_lastname",
+                        "othernames": "test_othernames",
+                        "email": "test_email@email.com",
+                        "phoneNumber": "test_phonNumber",
+                        "username": "test_username",
+                        "registered": "registered",
+                        "password": "1234",
+                        "password_confirm": "1234"
                             }
         self.client.post('api/v1/users',
                          json=user_details)
@@ -48,12 +54,15 @@ class Test_record_views(unittest.TestCase):
     def test_delete_user_details(self):
         # Tests that the end point enables user delete account
         user_details = {
-                        "firstname": "test",
-                        "lastname": "user",
-                        "othernames": "test_user",
-                        "email": "test@test.com",
-                        "phoneNumber": "testNumber",
-                        "username": "test_username"
+                        "firstname": "test_firstname",
+                        "lastname": "test_lastname",
+                        "othernames": "test_othernames",
+                        "email": "test_email@email.com",
+                        "phoneNumber": "test_phonNumber",
+                        "username": "test_username",
+                        "registered": "registered",
+                        "password": "1234",
+                        "password_confirm": "1234"
             }
         response = self.client.post('api/v1/users',
                                     content_type='application/json',

@@ -16,15 +16,15 @@ class test_incident(unittest.TestCase):
     def test_get_single_incident(self):
         # Tests that the end point returns a single record
         incident_details = {
-                "status": 201,
-                "location": "Nairobi",
-                "type": "red-flag",
-                "Images": "list of images",
-                "Videos": "list of videos",
-                "comment": "test comment 2",
-                "createdBy": "createdBy",
-                "createdOn": "createdOn",
-                "id" : 0
+                    "id" : 0,
+                    "createdOn" : "Date",  
+                    "createdBy" : 1, 
+                    "type" : "red-flags",       
+                    "location" : "Nairobi",   
+                    "status" : "draft",     
+                    "comment" : "another one",
+                    "Images" : "images",
+                    "Videos" : "videos"
             }
         self.client.post('/api/v1/incident',
                          json=incident_details)
@@ -37,29 +37,29 @@ class test_incident(unittest.TestCase):
         # Tests that the end point enables user to edit an incident
         # created incident before status is changed by admin
         incident_details = {
-                "status": 201,
-                "location": "Nairobi",
-                "type": "red-flag",
-                "Images": "list of images",
-                "Videos": "list of videos",
-                "comment": "test comment 2",
-                "createdBy": "createdBy",
-                "createdOn": "createdOn",
-                "id" : 0
+                    "id" : 0,
+                    "createdOn" : "Date",  
+                    "createdBy" : 1, 
+                    "type" : "red-flags",       
+                    "location" : "Nairobi",   
+                    "status" : "draft",     
+                    "comment" : "another one",
+                    "Images" : "images",
+                    "Videos" : "videos"
             }
         response = self.client.post('/api/v1/incident',
                                     content_type='application/json',
                                     json=incident_details)
         new_details = {
-                "status": 201,
-                "location": "Nairobi",
-                "type": "red-flag",
-                "Images": "list of images",
-                "Videos": "list of videos",
-                "comment": "test comment 2",
-                "createdBy": "createdBy",
-                "createdOn": "createdOn",
-                "id" : 0
+                    "id" : 0,
+                    "createdOn" : "Date",  
+                    "createdBy" : 1, 
+                    "type" : "red-flags",       
+                    "location" : "Nairobi",   
+                    "status" : "draft",     
+                    "comment" : "another one",
+                    "Images" : "images",
+                    "Videos" : "videos"
         }
         response = self.client.put('/api/v1/incidents/1',
                                    json=new_details)
@@ -71,15 +71,15 @@ class test_incident(unittest.TestCase):
         # Tests that the end point enables user edit an incident
         # record when rejected by admin
         incident_details = {
-               "status": 201,
-                "location": "Nairobi",
-                "type": "red-flag",
-                "Images": "list of images",
-                "Videos": "list of videos",
-                "comment": "test comment 2",
-                "createdBy": "createdBy",
-                "createdOn": "createdOn",
-                "id" : 0
+                    "id" : 0,
+                    "createdOn" : "Date",  
+                    "createdBy" : 1, 
+                    "type" : "red-flags",       
+                    "location" : "Nairobi",   
+                    "status" : "draft",     
+                    "comment" : "another one",
+                    "Images" : "images",
+                    "Videos" : "videos"
             }
         response = self.client.post('/api/v1/incident',
                                     content_type='application/json',
