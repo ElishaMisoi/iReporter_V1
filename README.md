@@ -20,10 +20,14 @@ Project API demo is hosted at [Heroku](https://ireporter-api-v1.herokuapp.com)
 
 ### API endpoints
 
-Prefix `api/v1/` to all api endpoints below
-
 | **HTTP METHOD**   | **URI**  | **ACTION** |
 |---|---|---|
+|  **POST** |  `/red-flags` | post a red-flag |
+|  **GET** |  `/red-flags` | get list of all red-flags |
+|  **GET** |  `/red-flags/<int:redflag_id>` | fetch red-flag records by `redflag_id` field |
+|  **PATCH** |  `/red-flags/<int:redflag_id>/location` | edit redflag location `incident_id` field |
+|  **PATCH** |  `/red-flags/<int:redflag_id>/comment` | edit redflag comment `incident_id` field |
+| **DELETE**  |  `/red-flags/<int:redflag_id>` | delete redflag record with given `redflag_id` |
 |  **POST** |  `/api/v1/incident` | post an incident |
 |  **GET** |  `/api/v1/incidents` | get list of all incidents |
 |  **GET** |  `/api/v1/incidents/<int:incident_id>` | fetch incident records by `incident_id` field |
