@@ -41,3 +41,4 @@ Project API demo is hosted at [Heroku](https://ireporter-api-v1.herokuapp.com)
 - Install nosetests
 - Navigate to project root
 - Use `nosetests app/tests/` to run the tests
+
