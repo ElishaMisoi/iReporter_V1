@@ -41,7 +41,8 @@ def create_incident():
     if errors:
             return jsonify({
               "errors": errors, 
-              "status": 422}), 422
+              "status": 400}), 400
+
 
     id = len(incidents_list)+1
     createdOn = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
