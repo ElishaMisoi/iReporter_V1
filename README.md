@@ -38,8 +38,8 @@ Prefix `api/v1/` to all api endpoints below
 |  **GET** |  `/incidents/<int:incident_id>` | fetch incident records by `incident_id` field |
 | **DELETE, GET, PUT**  |  `/incidents/<int:incident_id>` | get, delete and update incident records with given `incident_id` |
 |  **POST** |  `/users` | create a new user |
-|  **DELETE, GET, PUT** |  `/users/<int:user_id>'  | get, delete and update user with given `user_id`|
-|  **GET** |  `/users' | fetch all users |
+|  **DELETE, GET, PUT** |  `/users/<int:user_id>` | get, delete and update user with given `user_id`|
+|  **GET** |  `/users` | fetch all users |
 
 
 ### Running Tests
