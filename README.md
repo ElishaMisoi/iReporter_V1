@@ -23,6 +23,8 @@ Project API demo is hosted at [Heroku](https://ireporter-api-v1.herokuapp.com)
 
 ### API endpoints
 
+Prefix `api/v1/` to all api endpoints below
+
 | **HTTP METHOD**   | **URI**  | **ACTION** |
 |---|---|---|
 |  **POST** |  `/red-flags` | post a red-flag |
@@ -31,13 +33,13 @@ Project API demo is hosted at [Heroku](https://ireporter-api-v1.herokuapp.com)
 |  **PATCH** |  `/red-flags/<int:redflag_id>/location` | edit redflag location `incident_id` field |
 |  **PATCH** |  `/red-flags/<int:redflag_id>/comment` | edit redflag comment `incident_id` field |
 | **DELETE**  |  `/red-flags/<int:redflag_id>` | delete redflag record with given `redflag_id` |
-|  **POST** |  `/api/v1/incident` | post an incident |
-|  **GET** |  `/api/v1/incidents` | get list of all incidents |
-|  **GET** |  `/api/v1/incidents/<int:incident_id>` | fetch incident records by `incident_id` field |
-| **DELETE, GET, PUT**  |  `/api/v1/incidents/<int:incident_id>` | get, delete and update incident records with given `incident_id` |
-|  **POST** |  `/api/v1/users` | create a new user |
-|  **DELETE, GET, PUT** |  `/api/v1/users/<int:user_id>'  | get, delete and update user with given `user_id`|
-|  **GET** |  `/api/v1/users' | fetch all users |
+|  **POST** |  `/incidents` | post an incident |
+|  **GET** |  `/incidents` | get list of all incidents |
+|  **GET** |  `/incidents/<int:incident_id>` | fetch incident records by `incident_id` field |
+| **DELETE, GET, PUT**  |  `/incidents/<int:incident_id>` | get, delete and update incident records with given `incident_id` |
+|  **POST** |  `/users` | create a new user |
+|  **DELETE, GET, PUT** |  `/users/<int:user_id>'  | get, delete and update user with given `user_id`|
+|  **GET** |  `/users' | fetch all users |
 
 
 ### Running Tests
