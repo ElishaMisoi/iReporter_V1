@@ -29,7 +29,7 @@ class IncidentSchema(Schema):
     comment = fields.Str(required=True, validate=(required))
     location = fields.Str(required=True, validate=(required))
     id = fields.Int(required=False)
-    createdOn = fields.DateTime(required=False)
+    createdOn = fields.Str(required=False)
     createdBy = fields.Int(required=False)
     Images = fields.Str(required=False)
     status = fields.Str(required=False)
@@ -57,10 +57,8 @@ def create_incident():
               "errors": errors, 
               "status": 422}), 422
 
-# .strftime('%Y-%m-%d %H:%M:%S')
-
     id = len(incidents_list)+1
-    createdOn = datetime.now()
+    createdOn = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     createdBy = id = len(incidents_list)+1
     incident = Incident(id, createdOn, createdBy, data['type'], data['location'],
                 data['status'],
@@ -138,7 +136,7 @@ def create_user():
               "status": 422}), 422
 
     id = len(users)+1
-    registered = datetime.now()
+    registered = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     isAdmin = False
 
     user = User(id, data['firstname'], data['lastname'],
@@ -211,7 +209,7 @@ def create_redflag():
               "status": 422}), 422
 
     id = len(redflags_list)+1
-    createdOn = datetime.now()
+    createdOn = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     createdBy = id = len(redflags_list)+1
     type = "red-flag"
     red_flag = Incident(id, createdOn, createdBy, type, data['location'],
