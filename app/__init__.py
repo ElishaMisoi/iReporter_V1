@@ -3,6 +3,7 @@ from flask import Flask
 # from app.db import create_tables
 
 # create_tables.create_tables()
+
 app = Flask(__name__)
 # CORS(app)
 
