@@ -1,15 +1,13 @@
-# from flask import Flask, Blueprint
-# from .api.v1 import version_one as v1
+from flask import Flask
+# from flask_cors import CORS
+from app.db import create_tables
 
+create_tables.create_tables()
+app = Flask(__name__)
+# CORS(app)
 
-# def create_app(config_name):
+app.url_map.strict_slashes = False
 
-#     app = Flask(__name__)
-#     app.register_blueprint(v1)
-#      return app
-# gunicorn "app:create_app('debug')"
+from app.api.v1.views import users, incident, api
 
-from app.api.v1.views import app
-
-if __name__ == '__main__':
-    app.run(debug=True)
+app.register_blueprint(api, url_prefix='/api/v1')
