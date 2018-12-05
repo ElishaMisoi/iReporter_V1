@@ -1,6 +1,6 @@
 import unittest
 import json
-from app.api.v1.views import app
+from app import app
 from flask import Flask
 
 class Test_record_views(unittest.TestCase):

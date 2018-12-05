@@ -1,6 +1,6 @@
 import unittest
 import json
-from app.api.v1.views import app
+from app import app
 
 
 class test_incident(unittest.TestCase):
@@ -26,7 +26,7 @@ class test_incident(unittest.TestCase):
                     "Images" : "images",
                     "Videos" : "videos"
             }
-        self.client.post('/api/v1/incident',
+        self.client.post('/api/v1/incidents',
                          json=incident_details)
         response = self.client.get('/api/v1/incidents/1',
                                    content_type='application/json')
@@ -47,7 +47,7 @@ class test_incident(unittest.TestCase):
                     "Images" : "images",
                     "Videos" : "videos"
             }
-        response = self.client.post('/api/v1/incident',
+        response = self.client.post('/api/v1/incidents',
                                     content_type='application/json',
                                     json=incident_details)
         new_details = {
@@ -81,7 +81,7 @@ class test_incident(unittest.TestCase):
                     "Images" : "images",
                     "Videos" : "videos"
             }
-        response = self.client.post('/api/v1/incident',
+        response = self.client.post('/api/v1/incidents',
                                     content_type='application/json',
                                     json=incident_details)
         new_details = {
