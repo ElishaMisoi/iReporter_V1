@@ -29,7 +29,7 @@ class IncidentSchema(Schema):
     comment = fields.Str(required=True, validate=(required))
     location = fields.Str(required=True, validate=(required))
     id = fields.Int(required=False)
-    createdOn = fields.Str(required=False)
+    createdOn = fields.DateTime(required=False)
     createdBy = fields.Int(required=False)
     Images = fields.Str(required=False)
     status = fields.Str(required=False)
@@ -57,8 +57,10 @@ def create_incident():
               "errors": errors, 
               "status": 422}), 422
 
+# .strftime('%Y-%m-%d %H:%M:%S')
+
     id = len(incidents_list)+1
-    createdOn = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    createdOn = datetime.now()
     createdBy = id = len(incidents_list)+1
     incident = Incident(id, createdOn, createdBy, data['type'], data['location'],
                 data['status'],
@@ -136,7 +138,7 @@ def create_user():
               "status": 422}), 422
 
     id = len(users)+1
-    registered = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    registered = datetime.now()
     isAdmin = False
 
     user = User(id, data['firstname'], data['lastname'],
@@ -197,6 +199,7 @@ def get_redflags():
              "status": 404
              }, 404)
 
+
 @app.route('/red-flags', methods=['POST'])
 def create_redflag():
     # function for creating a red-flag
@@ -208,7 +211,7 @@ def create_redflag():
               "status": 422}), 422
 
     id = len(redflags_list)+1
-    createdOn = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    createdOn = datetime.now()
     createdBy = id = len(redflags_list)+1
     type = "red-flag"
     red_flag = Incident(id, createdOn, createdBy, type, data['location'],
@@ -222,6 +225,7 @@ def create_redflag():
         "status": 201,
         }), 201
 
+
 @app.route('/red-flags/<int:redflag_id>', methods=['GET'])
 def get_single_redflag(redflag_id):
     # function for getting a single redflag
@@ -231,6 +235,7 @@ def get_single_redflag(redflag_id):
     return jsonify({
         "data": my_incident
         }), 200
+
 
 @app.route('/red-flags/<int:redflag_id>/location', methods=['PATCH'])
 def edit_iredflag_location(redflag_id):
@@ -251,6 +256,7 @@ def edit_iredflag_location(redflag_id):
              "status": 404
              }, 404)
 
+
 @app.route('/red-flags/<int:redflag_id>/comment', methods=['PATCH'])
 def edit_redflag_comment(redflag_id):
     # function for editing redflag comment
@@ -269,6 +275,7 @@ def edit_redflag_comment(redflag_id):
              "error": "the red-flag was not found",
              "status": 404
              }, 404)
+
 
 @app.route('/red-flags/<int:redflag_id>', methods=['DELETE'])
 def delete_redflag(redflag_id):
