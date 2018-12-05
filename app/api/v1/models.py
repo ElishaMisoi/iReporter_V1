@@ -36,7 +36,7 @@ class User:
         self.email = email
         self.phoneNumber = phoneNumber
         self.username = username
-        self. registered = registered
+        self.registered = registered
         self.isAdmin = isAdmin
         self.password = password
         self.password_confirm = password_confirm
